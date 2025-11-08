@@ -21,4 +21,10 @@ public class Evento {
 
     @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
     private List<Asistente> asistentes;
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    @NotNull
+    private Categoria categoria;
+
 }
